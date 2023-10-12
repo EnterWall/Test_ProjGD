@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://hy0wxaa28mxp"]
+
+[ext_resource type="Script" path="res://Player/test_projectile.gd" id="1_dnx2w"]
+[ext_resource type="Texture2D" uid="uid://cqj8m0t1br7u6" path="res://Player/Resources/Texturs/projectile.bmp" id="1_uvpf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gslsg"]
+size = Vector2(10, 5)
+
+[node name="Test_projectile" type="Area2D"]
+script = ExtResource("1_dnx2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uvpf0")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gslsg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.5, 0.25)
