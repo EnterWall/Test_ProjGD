@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://wccc5lun4hbv"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_4sbgn"]
 [ext_resource type="Texture2D" uid="uid://7h6lo0fshgy1" path="res://Player/Resources/Texturs/test_p.bmp" id="1_7res8"]
-[ext_resource type="Script" path="res://Player/Weapon.gd" id="3_0dcqe"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_olca4"]
 [ext_resource type="Texture2D" uid="uid://c2tq7737un60r" path="res://Player/Resources/Texturs/pist.png" id="3_h6pah"]
-[ext_resource type="Script" path="res://Player/Gun.gd" id="4_adtep"]
+[ext_resource type="Script" path="res://scripts/Gun.gd" id="4_mnjnp"]
+[ext_resource type="Script" path="res://scripts/Weapon.gd" id="5_h5t07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdior"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(559, 312)
-script = ExtResource("1_4sbgn")
+script = ExtResource("1_olca4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bdior")
@@ -22,13 +22,13 @@ texture = ExtResource("1_7res8")
 position = Vector2(20, 0)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_h6pah")
-script = ExtResource("4_adtep")
+script = ExtResource("4_mnjnp")
 
 [node name="Weapon" type="Node2D" parent="Gun"]
 position = Vector2(-20, 20)
-script = ExtResource("3_0dcqe")
+script = ExtResource("5_h5t07")
 
 [node name="Timer" type="Timer" parent="Gun/Weapon"]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 autostart = true

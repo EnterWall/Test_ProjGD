@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://chead4dyf674p"]
+
+[ext_resource type="Script" path="res://scripts/test_projectile.gd" id="1_syi1l"]
+[ext_resource type="Texture2D" uid="uid://cqj8m0t1br7u6" path="res://Player/Resources/Texturs/projectile.bmp" id="2_y4wob"]
+[ext_resource type="Texture2D" uid="uid://c2tq7737un60r" path="res://Player/Resources/Texturs/pist.png" id="3_11wig"]
+[ext_resource type="Script" path="res://scripts/Gun.gd" id="4_my5m8"]
+[ext_resource type="Script" path="res://scripts/Weapon.gd" id="5_q2qbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gslsg"]
+size = Vector2(10, 5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Test_projectile" type="Area2D" parent="."]
+script = ExtResource("1_syi1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Test_projectile"]
+texture = ExtResource("2_y4wob")
+
+[node name="collider" type="CollisionShape2D" parent="Test_projectile"]
+shape = SubResource("RectangleShape2D_gslsg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Test_projectile"]
+scale = Vector2(0.5, 0.25)
+
+[node name="Gun" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_11wig")
+script = ExtResource("4_my5m8")
+
+[node name="Weapon" type="Node2D" parent="Gun"]
+script = ExtResource("5_q2qbx")
+
+[node name="Timer" type="Timer" parent="Gun/Weapon"]
+wait_time = 0.2
+one_shot = true
+autostart = true

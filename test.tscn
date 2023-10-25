@@ -9,3 +9,7 @@
 position = Vector2(589, 450)
 
 [node name="Player" parent="." instance=ExtResource("1_t5b4u")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(388, 254)
+energy = 1.29

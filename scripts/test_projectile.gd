@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 300
+@export var speed = 800
 
 @onready var notifire = $VisibleOnScreenNotifier2D
 
@@ -11,7 +11,7 @@ var start = Vector2(0,0)
 
 func direction_math(mouse_rot) -> void:
 	direction_speed = Vector2((speed*2*cos(mouse_rot))/2,(speed*2*sin(mouse_rot))/2)
-	
+
 	
 func _physics_process(delta):
 	position += direction_speed * delta
